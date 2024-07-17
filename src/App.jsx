@@ -1,16 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
 import BooksPage from "./pages/BooksPage/BooksPage"
-
+import SearchContextProvider from "./contexts/SearchContextProvider/SearchContextProvider"
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<BooksPage/>}></Route>
-        </Routes>
-      </BrowserRouter>
+      <SearchContextProvider>
+        <BooksPage />
+      </SearchContextProvider>
     </>
   )
 }

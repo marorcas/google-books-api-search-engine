@@ -1,25 +1,26 @@
-import { useState } from 'react';
+import { useContext } from 'react'
+
 import styles from './BooksPage.module.scss'
 
-const BooksPage = () => {
-    const [books, setBooks] = useState([]);
+import BooksContainer from '../../containers/BooksContainer/BooksContainer'
+import SearchBar from '../../components/SearchBar/SearchBar'
+import { SearchContext } from '../../contexts/SearchContextProvider/SearchContextProvider'
 
-    // useEffect(() => {
-    //   fetchAllBooks()
-    //     .then((data) => setBooks(data))
-    //     .catch((e) => console.log(e));
-    // }, []);
+const BooksPage = () => {
+    const { setSearchTerm } = useContext(SearchContext)
+
+    const onBookSearch = (value) => {
+      setSearchTerm(value)
+    }
 
     return (
-      <main className={styles.BooksPage}>
-        <h1 className={styles.Title}>Books</h1>
-        <section className={styles.Books}>
-          {/* {books.map((book) => (
-            <MovieCard key={book.id} book={book} />
-          ))} */}
-          <p>Content</p>
-        </section>
-      </main>
+      <>
+      {/* <div className={styles.BooksPage}> */}
+        <h1 className={styles.Title}>Books Search</h1>
+        <SearchBar onBookSearch={onBookSearch} />
+        <BooksContainer />
+      {/* </div> */}
+      </>
     );
 }
 
