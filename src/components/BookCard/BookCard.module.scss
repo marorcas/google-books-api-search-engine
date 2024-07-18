@@ -2,9 +2,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    height: 200px;
-    width: 300px;
+    // border: 1px solid black;
+    height: 300px;
+    width: 200px;
+
+    //when I implement this, the modal doens't show up as full screen
+//     &:hover {
+//         transform: scale(1.1);
+//     }
+}
+
+.BookTitle {
+//     background-color: rgb(177, 177, 177);
 }
 
 .BookModal {
@@ -13,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: red; /* semi-transparent overlay */
+    background-color: red;
     display: flex;
     justify-content: center;
     align-items: center;
