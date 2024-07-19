@@ -1,22 +1,65 @@
-.BookCover {
+.Book {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
-    height: 300px;
-    width: 200px;
+    height: 200px;
+    width: 300px;
+    transform-style: preserve-3d;
 
-    //when I implement this, the modal doens't show up as full screen
-//     &:hover {
-//         transform: scale(1.1);
-//     }
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
-.BookTitle {
-//     background-color: rgb(177, 177, 177);
+.LeftPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    background-color: #f9f7f6;
+    transform: rotateY(0deg) skewY(5deg);
+    // border-radius: 100px / 10%;
+    border-top-left-radius: 100px 20px; /* Adjust values for top-left corner */
+    border-top-right-radius: 100px 20px; /* Adjust values for top-right corner */
+    border-bottom-left-radius: 0px 0px 100px 100px;
+    border-bottom-right-radius: 0px 0px 100px 100px; 
 }
 
-.BookModal {
+.Cover {
+    border-top-left-radius: 100px 20px;
+    border-top-right-radius: 100px 20px; 
+}
+
+.RightPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 0;
+    background-color: #f9f7f6;
+    transform: rotateY(0deg) skewY(-5deg);
+    border-top-left-radius: 100px 20px;
+    border-top-right-radius: 100px 20px;
+}
+
+.Title {
+    font-weight: bold;
+}
+
+.Author {
+    font-size: small;
+    font-style: italic;
+}
+
+.Modal {
     position: fixed;
     top: 0;
     left: 0;
