@@ -5,7 +5,6 @@ import styles from './BooksPage.module.scss'
 import BooksContainer from '../../containers/BooksContainer/BooksContainer'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import { SearchContext } from '../../contexts/SearchContextProvider/SearchContextProvider'
-import { useNavigate } from 'react-router-dom'
 
 const BooksPage = () => {
     const { setSearchTerm } = useContext(SearchContext)

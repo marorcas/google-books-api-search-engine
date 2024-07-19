@@ -23,14 +23,14 @@ export const fetchBooks = async (searchTerm) => {
     return data.items;
 }
 
-export const fetchBookById = async (id) => {
-    const response = await fetch(`${API_URL}/${id}`);
+// export const fetchBookById = async (id) => {
+//     const response = await fetch(`${API_URL}/${id}`);
 
-    if (!response.ok) {
-        throw new Error("Failed to fetch book");
-    }
+//     if (!response.ok) {
+//         throw new Error("Failed to fetch book");
+//     }
 
-    const data = await response.json();
+//     const data = await response.json();
 
-    return data;
-}
+//     return data;
+// }
