@@ -2,6 +2,8 @@ import { useState } from "react"
 
 import styles from "./BookCard.module.scss"
 
+import placeholderImg from "../../assets/placeholder.png"
+
 const BookCard = ({ book }) => {
   const [showBookModal, setShowBookModal] = useState(false)
 
@@ -21,7 +23,7 @@ const BookCard = ({ book }) => {
             <img src={book.volumeInfo.imageLinks.thumbnail}
               className={styles.Cover} />
           ) : (
-            <img src="../../assets/placeholder.png" />
+            <img src={placeholderImg} className={styles.PlaceholderImg} />
           )}
         </div>
 
@@ -33,29 +35,21 @@ const BookCard = ({ book }) => {
 
       {showBookModal && (
         <div className={styles.Modal}>
+          <p>Title: {book.volumeInfo.title}</p>
+          {book.volumeInfo.imageLinks ? (
+            <img src={book.volumeInfo.imageLinks.thumbnail} />
+          ) : (
+            <img src={placeholderImg} />
+          )}
+          <p>Author/s: {book.volumeInfo.authors.join(", ")}</p>
+          <p>Summary: {book.volumeInfo.description}</p>
+          <p>Publisher: {book.volumeInfo.publisher}</p>
+          <p>Published date: {book.volumeInfo.publishedDate}</p>
+          <p>Page count: {book.volumeInfo.pageCount}</p>
           <button onClick={closeBookModal}>Close</button>
         </div>
       )}
     </>
-
-    // <article className={styles.BookCover}>
-    //   <div className={styles.BookInfo} onClick={openBookModal}>
-        // {book.volumeInfo.imageLinks ? (
-        //   <img src={book.volumeInfo.imageLinks.thumbnail} />
-        // ) : (
-        //   <img src="../../assets/placeholder.png" />
-        // )}
-        // <p className={styles.BookTitle}>{book.volumeInfo.title}</p>
-    //     {/* <h2>{book.volumeInfo.title}</h2>
-    //     <h4>{book.volumeInfo.authors.join(", ")}</h4> */}
-    //   </div>
-
-      // {showBookModal && (
-      //   <div className={styles.BookModal}>
-      //     <button onClick={closeBookModal}>Close</button>
-      //   </div>
-      // )}
-    // </article>
   )
 }
 

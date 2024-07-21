@@ -8,7 +8,7 @@ export const fetchBooks = async (searchTerm) => {
     }
 
     console.log(searchTerm);
-    const response = await fetch(`${API_URL}?q=${searchTerm}`);
+    const response = await fetch(`${API_URL}?q=${searchTerm}&maxResults=24`);
 
     if (!response.ok) {
         throw new Error("Failed to fetch data");
@@ -17,7 +17,7 @@ export const fetchBooks = async (searchTerm) => {
     const data = await response.json();
 
     if (data.totalItems === 0) {
-        throw new Error("No books found");
+        throw new Error(`No books found for "${searchTerm}"`);
     }
 
     return data.items;

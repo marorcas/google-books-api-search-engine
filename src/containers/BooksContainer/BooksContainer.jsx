@@ -34,11 +34,18 @@ const BooksContainer = () => {
             <div className={styles.BooksContainer}>
                 {fetchStatus === "IDLE" && <p>Search for a book</p>}
 
-                {fetchStatus === "LOADING" && <p>Searching for {searchTerm}</p>}
+                {/* seems to work most of the time but sometimes results page doesn't display after a few searches? */}
+                {fetchStatus === "LOADING" && (
+                    <div className={styles.Loading}>
+                        <span className={styles.Dots}></span>
+                    </div>
+                )}
 
                 {fetchStatus === "SUCCESS" && <BooksList booksList={booksList} />}
 
-                {fetchStatus === "FAILURE" && <p>{error.message}</p>}
+                {fetchStatus === "FAILURE" && (
+                    <p className={styles.Error}>{error.message}</p>
+                )}
             </div>
         </>
     )
