@@ -5,6 +5,7 @@
     height: 200px;
     width: 300px;
     transform-style: preserve-3d;
+    font-family: 'Courier New', Courier, monospace;
 
     &:hover {
         transform: scale(1.1);
@@ -30,6 +31,8 @@
 }
 
 .Cover {
+    height: 180px;
+    width: 128px;
     border-top-left-radius: 100px 20px;
     border-top-right-radius: 100px 20px; 
 }
@@ -59,10 +62,12 @@
 
 .Title {
     font-weight: bold;
+    font-size: small;
 }
 
 .Author {
     font-style: italic;
+    font-size: small;
 }
 
 .Modal {
@@ -83,6 +88,8 @@
 
 .ModalContent {
     max-width: 50%;
+    max-height: 70%;
+    overflow: auto;
 }
 
 // .BookCover {
