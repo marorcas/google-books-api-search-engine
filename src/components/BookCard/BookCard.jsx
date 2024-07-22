@@ -29,24 +29,57 @@ const BookCard = ({ book }) => {
 
         <div className={styles.RightPage}>
           <p className={styles.Title}>{book.volumeInfo.title}</p>
-          <p className={styles.Author}>{book.volumeInfo.authors.join(", ")}</p>
+          <p className={styles.Author}>
+            {book.volumeInfo.authors ? (
+              book.volumeInfo.authors.join(", ")
+            ) : (
+              "[No author recorded]"
+            )}
+          </p>
         </div>
       </article>
 
       {showBookModal && (
         <div className={styles.Modal}>
-          <p>Title: {book.volumeInfo.title}</p>
-          {book.volumeInfo.imageLinks ? (
-            <img src={book.volumeInfo.imageLinks.thumbnail} />
-          ) : (
-            <img src={placeholderImg} />
-          )}
-          <p>Author/s: {book.volumeInfo.authors.join(", ")}</p>
-          <p>Summary: {book.volumeInfo.description}</p>
-          <p>Publisher: {book.volumeInfo.publisher}</p>
-          <p>Published date: {book.volumeInfo.publishedDate}</p>
-          <p>Page count: {book.volumeInfo.pageCount}</p>
-          <button onClick={closeBookModal}>Close</button>
+          <div className={styles.ModalContent}>
+            <p>Title: {book.volumeInfo.title}</p>
+            {book.volumeInfo.imageLinks ? (
+              <img src={book.volumeInfo.imageLinks.thumbnail} />
+            ) : (
+              <img src={placeholderImg} />
+            )}
+            <p>Author/s: {book.volumeInfo.authors ? (
+              book.volumeInfo.authors.join(", ")
+              ) : (
+                "[No author/s recorded]"
+              )}
+            </p>
+            <p>Summary: {book.volumeInfo.description ? (
+              book.volumeInfo.description
+              ) : (
+                "[No description recorded]"
+              )}
+            </p>
+            <p>Publisher: {book.volumeInfo.publisher ? (
+              book.volumeInfo.publisher
+              ) : (
+                "[No publisher recorded]"
+              )}
+            </p>
+            <p>Published date: {book.volumeInfo.publishedDate ? (
+              book.volumeInfo.publishedDate
+              ) : (
+                "[No date recorded]"
+              )}
+            </p>
+            <p>Page count: {book.volumeInfo.pageCount ? (
+              book.volumeInfo.pageCount
+              ) : (
+                "[No count recorded]"
+              )}
+            </p>
+            <button onClick={closeBookModal}>Close</button>
+          </div>
         </div>
       )}
     </>
