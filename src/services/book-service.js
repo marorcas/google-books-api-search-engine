@@ -1,5 +1,4 @@
 const API_URL = "https://www.googleapis.com/books/v1/volumes";
-// const API_KEY = "AIzaSyAlkMrRj3_2KFb3bFthXq2phPBZzOb0kak";
 
 export const fetchBooks = async (searchTerm) => {
     if (searchTerm.trim() === "") {
