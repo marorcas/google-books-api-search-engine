@@ -5,6 +5,8 @@
     gap: 1em;
 }
 
-// .SearchButton {
-//     padding: 0 1em;
-// }
+.SearchButton {
+    &:hover {
+        transform: scale(1.1);
+    }
+}

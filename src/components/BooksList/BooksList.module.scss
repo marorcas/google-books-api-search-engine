@@ -12,4 +12,10 @@
     display: flex;
     justify-content: center;
     gap: 2em;
+
+    button {
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 }
