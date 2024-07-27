@@ -10,11 +10,9 @@ const Instructions = () => {
 
             <div className={styles.RightPage}>
                 <p className={styles.Title}>How to use this website</p>
-                <ul className={styles.Para}>
-                    <li>Use the search bar to look for a book</li>
-                    <li>You can search books by title, author, or topic</li>
-                    <li>When you are taken to the results page, click on a book card to find out further information about that book</li>
-                </ul>
+                <p className={styles.Para}>Use the search bar to look for a book</p>
+                <p className={styles.Para}>You can search books by title, author, or topic</p>
+                <p className={styles.Para}>When you are taken to the results page, click on a book card to find out further information about that book</p>
             </div>
       </article>
     )
