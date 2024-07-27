@@ -5,6 +5,7 @@ import styles from "./BooksContainer.module.scss"
 import { SearchContext } from "../../contexts/SearchContextProvider/SearchContextProvider"
 import { fetchBooks } from "../../services/book-service"
 import BooksList from "../../components/BooksList/BooksList"
+import Instructions from "../../components/Instructions/Instructions"
 
 const BooksContainer = () => {
     const { searchTerm } = useContext(SearchContext)
@@ -32,7 +33,7 @@ const BooksContainer = () => {
     return (
         <>
             <div className={styles.BooksContainer}>
-                {fetchStatus === "IDLE" && <p>Search for a book</p>}
+                {fetchStatus === "IDLE" && <Instructions/>}
 
                 {/* seems to work most of the time but sometimes results page doesn't display after a few searches? */}
                 {fetchStatus === "LOADING" && (

@@ -1,0 +1,55 @@
+.Book {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    width: 600px;
+    transform-style: preserve-3d;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.LeftPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    background-color: #f9f7f6;
+    transform: rotateY(0deg) skewY(5deg);
+    // border-radius: 100px / 10%;
+    border-top-left-radius: 100px 20px; /* Adjust values for top-left corner */
+    border-top-right-radius: 100px 20px; /* Adjust values for top-right corner */
+    border-bottom-left-radius: 0px 0px 100px 100px;
+    border-bottom-right-radius: 0px 0px 100px 100px; 
+}
+
+.RightPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    right: 0;
+    background-color: #f9f7f6;
+    transform: rotateY(0deg) skewY(-5deg);
+    border-top-left-radius: 100px 20px;
+    border-top-right-radius: 100px 20px;
+}
+
+.Title {
+    font-weight: bold;
+    padding: 0 2em;
+}
+
+.Para {
+    padding: 2em;
+}

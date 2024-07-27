@@ -1,5 +1,5 @@
 const API_URL = "https://www.googleapis.com/books/v1/volumes";
-// const API_KEY = "AIzaSyAlkMrRj3_2KFb3bFthXq2phPBZzOb0kak";
+const placeholderImg = "../../assets/placeholder.png";
 
 export const fetchBooks = async (searchTerm) => {
     if (searchTerm.trim() === "") {
@@ -20,17 +20,23 @@ export const fetchBooks = async (searchTerm) => {
         throw new Error(`No books found for "${searchTerm}"`);
     }
 
-    return data.items;
+    return cleanData(data.items);
 }
 
-// export const fetchBookById = async (id) => {
-//     const response = await fetch(`${API_URL}/${id}`);
+export const cleanData = (data) => {
+    return data.map(book => {
+        const volumeInfo = book.volumeInfo;
+        console.log(volumeInfo.imageLinks.thumbnail ?? placeholderImg);
 
-//     if (!response.ok) {
-//         throw new Error("Failed to fetch book");
-//     }
-
-//     const data = await response.json();
-
-//     return data;
-// }
+        return {
+            id: book.id,
+            title: volumeInfo.title || "[No title recorded]",
+            authors: volumeInfo.authors.join(", ") ?? "[No authors recorded]",
+            description: volumeInfo.description || "[No description recorded]",
+            publisher: volumeInfo.publisher || "[No publisher recorded]",
+            publishedDate: volumeInfo.publishedDate || "[No date recorded]",
+            pageCount: volumeInfo.pageCount || "[No page count recorded]",
+            imageLink: volumeInfo.imageLinks.thumbnail ?? placeholderImg,
+        }
+    })
+};
