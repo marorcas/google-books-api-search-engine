@@ -20,7 +20,7 @@ const BookCard = ({ book }) => {
     <>
       <article className={styles.Book} onClick={openBookModal}>
         <div className={styles.LeftPage}>
-          <img src={book.ImageLink} className={styles.Cover} />
+          <img src={book.imageLink} className={styles.Cover} />
           {/* {book.volumeInfo.imageLinks ? (
             <img src={book.volumeInfo.imageLinks.thumbnail}
               className={styles.Cover} />
@@ -51,7 +51,7 @@ const BookCard = ({ book }) => {
                 <tr>
                     <th>Book Cover</th>
                     <td>
-                      <img src={book.ImageLink} />
+                      <img src={book.imageLink} />
                       {/* {book.volumeInfo.imageLinks ? (
                         <img src={book.volumeInfo.imageLinks.thumbnail} />
                       ) : (
