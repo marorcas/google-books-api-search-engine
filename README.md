@@ -14,7 +14,10 @@ A web application with a search engine that lets the user search for a book/book
 
 ## Features
 
-Key features of the project.
+- Responsive design 
+- A search bar that takes in user inputs to search for books 
+- A modal with detailed information opens up when a book title is clicked 
+- Pagination 
 
 ## Usage
 
