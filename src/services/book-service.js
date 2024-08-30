@@ -36,7 +36,7 @@ export const cleanData = (data) => {
             publisher: volumeInfo.publisher || "[No publisher recorded]",
             publishedDate: volumeInfo.publishedDate || "[No date recorded]",
             pageCount: volumeInfo.pageCount || "[No page count recorded]",
-            imageLink: volumeInfo.imageLinks.thumbnail ?? placeholderImg,
+            imageLink: volumeInfo.imageLinks ? volumeInfo.imageLinks.thumbnail : placeholderImg,
         }
     })
 };
