@@ -26,12 +26,11 @@ export const fetchBooks = async (searchTerm) => {
 export const cleanData = (data) => {
     return data.map(book => {
         const volumeInfo = book.volumeInfo;
-        console.log(volumeInfo.imageLinks.thumbnail ?? placeholderImg);
 
         return {
             id: book.id,
             title: volumeInfo.title || "[No title recorded]",
-            authors: volumeInfo.authors.join(", ") ?? "[No authors recorded]",
+            authors: volumeInfo.authors ? volumeInfo.authors.join(", ") : "[No authors recorded]",
             description: volumeInfo.description || "[No description recorded]",
             publisher: volumeInfo.publisher || "[No publisher recorded]",
             publishedDate: volumeInfo.publishedDate || "[No date recorded]",

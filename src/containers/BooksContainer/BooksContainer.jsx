@@ -25,6 +25,7 @@ const BooksContainer = () => {
                 setFetchStatus("SUCCESS")
                 setBooksList(data)
             }).catch(err => {
+                console.log("This is the error:", err)
                 setError(err)
                 setFetchStatus("FAILURE")
             })
